@@ -12,7 +12,6 @@ body
 	font-family: 'Open Sans', sans-serif
 	font-size: 16px
 
-/*-- Clases compartidas --*/
 .contenedor
 	width: 90%
 	max-width: 1000px
@@ -28,7 +27,6 @@ body
 .mostrar
 	display: flex
 
-/*-- Cabecera --*/
 header
 	width: 100%
 	background: url('../img/bgFull.png') #281a0c
@@ -39,7 +37,6 @@ header
 		position: relative
 		height: 88vh
 
-/*-- Menú --*/
 .menu
 	width: 90%
 	margin: auto
@@ -54,7 +51,6 @@ header
 		padding: 10px 15px
 		border-bottom: 2px solid transparent
 		position: relative
-		//top: -200px Alto de los enlaces
 
 .menu a:hover
 	border-bottom: 2px solid white
@@ -75,160 +71,132 @@ header
 		font-size: 1.5em
 		font-style: italic
 
-/*-- Fin cabecera --*/
-/*-- Contenido principal --*/
 .cPrincipal
 	background: url('../img/bg-textura.png')
 	background-repeat: repeat
 
-/*-- Contenido Acerca de --*/
-.acerca-de .contenedor
-	overflow: visible
-	position: relative
+.acerca-de
+	.contenedor
+		overflow: visible
+		position: relative
+	.foto
+		width: 80%
+		position: absolute
+		left: 0
+		top: -50px
+		z-index: 0
+		box-shadow: 0px 0px 15px rgba(0,0,0,0.3)
+		img
+			vertical-align: top
+			width: 100%
+	article
+		background: white
+		padding: 40px
+		width: 50%
+		position: relative
+		top: 500px
+		z-index: 1
+		float: right
+		box-shadow: 0px 0px 15px rgba(0,0,0,0.3)
+		h3
+			font-size: 3em
+			font-weight: 300
+			margin-bottom: 40px
+		p
+			line-height: 28px
+			margin-bottom: 10px
 
-.acerca-de .foto
-	width: 80%
-	position: absolute
-	left: 0
-	top: -50px
-	z-index: 0
-	box-shadow: 0px 0px 15px rgba(0,0,0,0.3)
-
-.acerca-de .foto img
-	vertical-align: top
-	width: 100%
-
-.acerca-de article
-	background: white
-	padding: 40px
-	width: 50%
-	position: relative
-	top: 500px
-	/*top: 500px Para cambiar*/
-	z-index: 1
-	float: right
-	box-shadow: 0px 0px 15px rgba(0,0,0,0.3)
-
-.acerca-de article h3
-	font-size: 3em
-	font-weight: 300
-	margin-bottom: 40px
-
-.acerca-de article p
-	line-height: 28px
-	margin-bottom: 10px
-
-/*-- Fin Acerca de --*/
-/*-- Menú (La carta) --*/
 .laCarta
 	padding-top: 540px
 	margin-bottom: 80px
+	.titulo
+		margin-top: 30px
+	.centroCarta
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-around
+	article
+		padding: 20px
+	.categoria
+		font-size: 1.5em
+		font-weight: 700
+		text-align: center
+		margin-bottom: 40px
+	.producto
+		margin-bottom: 40px
+		padding-bottom: 20px
+		border-bottom: 4px dotted black
+	.nombre
+		font-size: 1.3em
+		margin-bottom: 15px
+		float: left
+	.precio
+		font-size: 1.3em
+		margin-bottom: 15px
+		float: right
+	.descripcion
+		font-size: 1em
+		clear: both
 
-.laCarta .titulo
-	margin-top: 30px
-
-.laCarta .contenedor-borde1, .laCarta .contenedor-borde2
+.laCarta .contenedor-borde1,
+.laCarta .contenedor-borde2
 	border: 1px solid black
 	background: transparent
 	padding: 15px
 	overflow: hidden
 
-.laCarta .centroCarta
-	display: flex
-	flex-wrap: wrap
-	justify-content: space-around
-
-.laCarta article
-	padding: 20px
-
-.laCarta .categoria
-	font-size: 1.5em
-	font-weight: 700
-	text-align: center
-	margin-bottom: 40px
-
-.laCarta .producto
-	margin-bottom: 40px
-	padding-bottom: 20px
-	border-bottom: 4px dotted black
-
-.laCarta .nombre
-	font-size: 1.3em
-	margin-bottom: 15px
-	float: left
-
-.laCarta .precio
-	font-size: 1.3em
-	margin-bottom: 15px
-	float: right
-
-.laCarta .descripcion
-	font-size: 1em
-	clear: both
-
-/*-- Fin Menu (La carta) --*/
-/*--  Galeria lightbox --*/
-/*-- PopPup --*/
 .popPup
 	position: fixed
 	width: 100%
 	height: 100vh
-	background: rgba(44, 62, 80, 0.6) /*#bdc3c7*/
+	background: rgba(44, 62, 80, 0.6)
 	z-index: 2
 	text-align: center
-	display: none/* Necesario para que la galeria aparezca*/
-
-.popPup img
-	position: relative
-	margin: 15vh auto
-	width: 60%
-	border: 5px solid white
-
-.popPup .cerrar
-	position: absolute
-	right: 20%
-	top: 15vh
-	color: white
-	background: #f56c5e
-	width: 30px
-	height: 30px
-	line-height: 30px
-	text-align: center
-	font-family: Arial
-	cursor: pointer
-	z-index: 1
-
-/*-- Fin PopPup --*/
+	display: none
+	img
+		position: relative
+		margin: 15vh auto
+		width: 60%
+		border: 5px solid white
+	.cerrar
+		position: absolute
+		right: 20%
+		top: 15vh
+		color: white
+		background: #f56c5e
+		width: 30px
+		height: 30px
+		line-height: 30px
+		text-align: center
+		font-family: Arial
+		cursor: pointer
+		z-index: 1
+		
 #galeria
 	box-shadow: 0 0 20px 0px rgba(0,0,0,0.3)
 	background: white
-
-#galeria .titulo
-	padding-top: 30px
+	.titulo
+		padding-top: 30px
 
 .galeria
 	display: flex
 	flex-wrap: wrap
 	background: rgb(73, 49, 22)
-
-.galeria .foto
-	width: 25%
-	opacity: 0.5
-	transition: ease-in-out 0.3s
-	cursor: pointer
-
-.galeria .foto:hover
-	opacity: 1
+	.foto
+		width: 25%
+		opacity: 0.5
+		transition: ease-in-out 0.3s
+		cursor: pointer
+	.foto:hover
+		opacity: 1
 
 .galeria .foto img
 	width: 100%
 	vertical-align: middle
 
-/*-- Fin Galeria lightbox --*/
-/*-- Ubicación --*/
 #ubicacion
 	background: white
-	padding-top: 30px 
+	padding-top: 30px
 
 .ubicacion
 	display: flex
@@ -236,15 +204,13 @@ header
 	align-items: center
 	margin-bottom: 60px
 	flex-wrap: wrap
-
-.ubicacion .horarios h4
-	text-align: center
-
-.ubicacion .horarios div
-	display: flex
-	align-items: center
-	justify-content: space-around
-	flex-wrap: wrap
+	.horarios h4
+		text-align: center
+	.horarios div
+		display: flex
+		align-items: center
+		justify-content: space-around
+		flex-wrap: wrap
 
 .ubicacion .horarios div p
 	padding: 20px
@@ -253,30 +219,23 @@ header
 .calle
 	font-style: italic
 
-/*-- Fin Ubicación --*/
-/*-- Mapa --*/
 .mapa
 	width: 100%
 	background: white
+	iframe
+		width: 100%
+		max-height: 600px
+		pointer-events: none
 
-.mapa iframe
-	width: 100%
-	max-height: 600px
-	pointer-events: none
-
-/*-- Fin Mapa --*/
-/*-- Fin contenido principal --*/
 footer
 	background: white
 
-/*--  Formulario --*/
 .contacto
 	padding: 30px 0
-
-.contacto .formulario
-	display: flex
-	flex-wrap: wrap
-	justify-content: space-between
+	.formulario
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
 
 .contacto .formulario input[type="text"],
 .contacto .formulario input[type="email"],
@@ -321,19 +280,15 @@ footer
 .contacto .formulario .boton:hover
 	background: rgb(121, 79, 31)
 
-/*-- Fin Formulario --*/
-/*--  Copyright --*/
 .copy
 	text-align: center
 	padding: 25px 0
 	color: white
 	background: black
+	p span
+		font-weight: bold
+		color: rgb(220, 161, 95)
 
-.copy p span
-	font-weight: bold
-	color: rgb(220, 161, 95)
-
-/*-- Fin Copyright --*/
 .arriba
 	position: fixed
 	width: 40px
@@ -346,91 +301,74 @@ footer
 	bottom: 20px
 	display: none
 
-/*-- Media Queries -- Tablet --*/
 @media screen and (min-width: 1024px)
 	.laCarta
 		padding-top: 430px
-	
 
 @media screen and (max-width: 832px)
-	/*-- Cabecera --*/
-	header .contenedor
-		position: static
-		height: auto
-	
-	header .menu
-		text-align: center
-		justify-content: space-around
-		width: 100%
-	
-	header .menu a
-		margin: 10px 20px
-	
-	header .textos
-		position: static
-		margin: 100px 0
-	
-	header .textos .nombre
-		font-size: 1.8em
-	
-	header .textos h3
-		font-size: 1.2em
-	
-	/*-- Acerca de --*/
+	header 
+		.contenedor
+			position: static
+			height: auto
+		.menu
+			text-align: center
+			justify-content: space-around
+			width: 100%
+			a
+				margin: 10px 20px
+		.textos
+			position: static
+			margin: 100px 0
+			.nombre
+				font-size: 1.8em
+			h3
+				font-size: 1.2em
+
 	.acerca-de .foto
 		position: relative
 		width: 100%
-	
+
 	.acerca-de article
 		position: relative
 		width: 100%
 		top: -50px
-		transform: translate(0px, 0)/*Quita efecto de la caja*/
-	
-	/*-- La carta --*/
+		transform: translate(0px, 0)
+
 	.laCarta
 		padding-top: 300px
-	
+
 	.laCarta .centroCarta
 		display: block
-	
-	/*-- Galeria --*/
+
 	.galeria .foto
 		width: 50%
-	
-	/*-- Galeria --*/
+
 	.popPup img
 		width: 90%
 		margin: 20vh 0
-	
+
 	.popPup .cerrar
 		right: 5%
 		top: 20vh
-	
-	/*-- Mapa --*/
+
 	.mapa
 		width: 80%
 		margin: auto
-	
 
-/*-- Media Queries --  Fin Tablet --*/
-/*-- Media Queries -- Mobile --*/
 @media screen and (max-width: 468px)
-	/*-- Menu mobile --*/
 	.btnMenu
 		position: absolute
 		top: 40px
 		left: 40px
 		cursor: pointer
 		z-index: 20
-	
+
 	.btnMenu ul li
 		width: 30px
 		height: 5px
 		margin-bottom: 5px
 		background: white
-	
-	/*-- Menú --*/
+
 	header .menu
 		text-align: center
 		justify-content: center
@@ -440,53 +378,44 @@ footer
 		background: #a5743d
 		width: 100%
 		display: none
-		/*left: -100%*/
-	
+
 	header .menu a
 		display: block
 		border: 2px solid transparent
-	
+
 	header .menu a:hover
 		background: rgba(255, 255, 255, 0.2)
 		border: 2px solid transparent
-	
-	/*-- Acerca de --*/
+
 	.acerca-de article h3
 		font-size: 2em
 		margin-bottom: 10px
-	
-	/*-- La Carta --*/
+
 	.laCarta article .nombre,
 	.laCarta article .precio
 		font-size: 1em
 		line-height: 16px
-	
-	/*-- Galeria --*/
+
 	.popPup img
 		width: 100%
 		margin: 30vh 0
-	
+
 	.popPup .cerrar
 		right: 0
 		top: 30vh
-	
-	/*-- Ubicación --*/
+
 	.ubicacion
 		text-align: center
-	
+
 	.ubicacion .direccion
 		margin-bottom: 30px
-	
+
 	.ubicacion .horarios div p
 		text-align: center
-	
-	/*-- Formulario --*/
+
 	.contacto .formulario input[type="text"],
 	.contacto .formulario input[type="email"]
 		width: 100%
-	
+
 	.contacto .formulario .boton
 		width: 100%
-	
-
-/*-- Media Queries -- Fin Mobile --*/

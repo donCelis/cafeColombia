@@ -1,8 +1,7 @@
 $(document).ready(function (){
 	
-	
-	var anchoVentana = $(window).width();
-	var menu = $('.menu a');
+	let anchoVentana = $(window).width();
+	let menu = $('.menu a');
 	//Efecto Cabecera
 	if(anchoVentana > 832){
 		$('header .textos').css({opacity:0}).animate({
@@ -23,8 +22,8 @@ $(document).ready(function (){
 
 	//Scroll del menú
 	menu.on('click', function (event){
-		var atributo = $(this).attr('href');
-		//var anchoVentana = $(window).width();
+		let atributo = $(this).attr('href');
+		//let anchoVentana = $(window).width();
 
 		if (atributo == '#acerca-de') {
 			if (anchoVentana > 832) {
@@ -47,14 +46,14 @@ $(document).ready(function (){
 
 	//Menú mobile
 	if (anchoVentana < 832) {
-		var btnMenu = $('.btnMenu');
-		btnMenu.on('click', function (event){
+		let btnMenu = $('.btnMenu');
+		btnMenu.on('click', event=>{
 			$('.menu').slideToggle();
 			event.preventDefault();
 		});
 	} else {
-		var btnMenu = $('.btnMenu');
-		btnMenu.on('click', function (event){
+		let btnMenu = $('.btnMenu');
+		btnMenu.on('click', event=>{
 			$('.menu').slideToggle();
 			event.preventDefault();
 		});
@@ -65,11 +64,11 @@ $(document).ready(function (){
 		$('.acerca-de article').css({opacity:0});
 	}
 
-	$(window).scroll(function (){
-		var anchoVentana = $(window).width();
+	$(window).scroll(()=>{
+		let anchoVentana = $(window).width();
 		
 		if (anchoVentana > 832) {
-			var alto = $(window).scrollTop();
+			let alto = $(window).scrollTop();
 			$('header .textos').css({
 				'transform': 'translate(0px,' + alto / 4 + '%)'
 			});
@@ -80,8 +79,8 @@ $(document).ready(function (){
 	});
 
 	//Desabilitar los movimientos para mobiles
-	$(window).resize(function (){
-		var anchoVentana = $(window).width();
+	$(window).resize(()=>{
+		let anchoVentana = $(window).width();
 		
 		if (anchoVentana < 832) {
 			$('header .textos').css({
@@ -94,14 +93,14 @@ $(document).ready(function (){
 				opacity: 1
 			});
 
-			menu.eq(0).on('click', function (){
+			menu.eq(0).on('click', ()=>{
 				$('body, html').stop().animate({
 					scrollTop: $('#acerca-de-mobile').offset().top
 				}, 1500, 'easeInOutQuart');
 			});
 
 		}else if (anchoVentana > 832){
-			menu.eq(0).on('click', function (){
+			menu.eq(0).on('click', ()=>{
 				$('body, html').stop().animate({
 					scrollTop: $('#acerca-de').offset().top -150
 				}, 1500, 'easeInOutQuart');
@@ -110,13 +109,13 @@ $(document).ready(function (){
 	});
 
 	//Evento de lightbox
-	//var img = $('.galeria .foto');
-	var img = $('.galeria .foto img');
-	var cerrar = $('.popPup .cerrar');
+	//let img = $('.galeria .foto');
+	let img = $('.galeria .foto img');
+	let cerrar = $('.popPup .cerrar');
 
 	img.on('click', function (){
-		//var atributo = $(this).attr('imgG');
-		var atributo = $(this).attr('src');
+		//let atributo = $(this).attr('imgG');
+		let atributo = $(this).attr('src');
 		
 		//$('.popPup img').attr('src', atributo);
 		$('.popPup img').attr('src', 'full-'+atributo);
@@ -125,25 +124,25 @@ $(document).ready(function (){
 	});
 
 	//Evento que cierra el lightbox
-	cerrar.on('click', function (){
+	cerrar.on('click', ()=>{
 		$('.popPup').fadeOut('fast');
 		//$('body').css({overflow: 'auto'});
 	});
 	
 	//Mapa
 	$('.mapa').on({
-		click: function (){
+		click: ()=>{
 			$('.mapa iframe').css({pointerEvents: 'auto'});
 		},
-		mouseleave: function (){
+		mouseleave: ()=>{
 			$('.mapa iframe').css({pointerEvents: 'none'});
 		}
 	});
 
 	//hace que el boton aparezca (backToTop)
-	$(window).on('scroll', function (){
-		var alturaVentana = $(window).scrollTop();
-		var alturaCaja = $('.laCarta').offset().top;
+	$(window).on('scroll', ()=>{
+		let alturaVentana = $(window).scrollTop();
+		let alturaCaja = $('.laCarta').offset().top;
 		
 		if (alturaVentana > alturaCaja){
 			$('.arriba').fadeIn();
@@ -153,7 +152,7 @@ $(document).ready(function (){
 	});
 
 	//hace que el boton lleve arriba
-	$('.arriba').on('click', function (){
+	$('.arriba').on('click', ()=>{
 		$('body, html').animate({scrollTop: '0px'}, 1500, 'easeInOutQuart');
 	});
 
